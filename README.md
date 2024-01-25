@@ -35,3 +35,61 @@ Port 8080 by default.
 | GET    | /api/v1/pets       | Get all pets                   |
 | GET    | /api/v1/pets/:name | Get a pet by name              |
 | GET    | /api/v1/pets/owner | Get a pet by owner's name      |
+
+
+<!-- Initialize a new project with `npm`
+npm init -y
+
+Install Express.js in the directory.
+npm install express 
+
+Create an Express.js server.
+const express = require("express");
+const app = express ();
+
+Set the server to listen at PORT 8080.
+it has to be the last thing at the bottom of the file 
+
+const port = 8080;
+
+app.listen (PORT, () => {
+    console.log(`server is running on port ${PORT}`);
+});
+
+start the server from the terminal
+in the terminal 
+$ node server.js or try node app.js
+
+CReate an API route to "/hello" that returns a greeting 
+app.get("/hello", (req, res) => {
+    res.send("Hello World!");
+});
+
+create a dynamic API route to "/hello/:name" that returns a specific greeting
+app.get("/hello/:name", (req, res) => {
+    const name = req.params.name;
+
+    res.send(`Hello ${name}`)
+});
+
+Create an API route with a queried string at "/hello-query" that returns a specific greetings this part goes befor :name 
+
+app.get ("/hello-query", (req, res) => {
+    const name = req.query.name;
+
+    res.send(`Hello ${name}`);
+});
+
+
+Stretch goal: Serve an "index.html" or react Application to demonstration interactivity in the browser 
+you want to import path if you want to style 
+const path = require("path");
+
+app.use (express.static(path.join(_dirname, "/public/index.html");
+))
+
+app.get("/", (req, res) => {
+    res.sendFile(_dirname + "/public/index.html");
+});
+
+How to do react? for the above question?  -->
